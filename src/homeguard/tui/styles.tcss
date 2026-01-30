@@ -1,0 +1,181 @@
+Screen {
+    background: $surface;
+}
+
+Header {
+    dock: top;
+}
+
+Footer {
+    dock: bottom;
+}
+
+/* Main screen layout */
+#main-container {
+    layout: horizontal;
+}
+
+#history-panel {
+    width: 20;
+    height: 100%;
+    border: solid $primary;
+}
+
+#history-panel > Static {
+    height: 3;
+    content-align: center middle;
+    background: $primary;
+    color: $text;
+}
+
+#content-panel {
+    width: 1fr;
+    height: 100%;
+}
+
+#device-table {
+    height: 50%;
+    border: solid $primary;
+}
+
+/* Settings screen */
+#settings-container {
+    padding: 2;
+}
+
+.setting-row {
+    height: 3;
+    margin: 1 0;
+}
+
+.setting-label {
+    width: 30;
+    content-align: left middle;
+}
+
+.section-title {
+    margin: 2 0 1 0;
+    text-style: bold;
+}
+
+.button-row {
+    margin-top: 2;
+    height: 3;
+}
+
+/* Monitoring screen */
+#monitor-container {
+    padding: 2;
+}
+
+#status-panel {
+    height: 6;
+    border: solid $primary;
+    padding: 1;
+    margin-bottom: 1;
+}
+
+#alerts-list {
+    height: 1fr;
+    border: solid $primary;
+    margin-bottom: 1;
+}
+
+DataTable {
+    width: 100%;
+}
+
+#details-row {
+    height: 50%;
+    layout: horizontal;
+}
+
+#device-panel {
+    width: 50%;
+    height: 100%;
+    border: solid $secondary;
+    padding: 1;
+    overflow-y: auto;
+}
+
+#findings-tree {
+    width: 50%;
+    height: 100%;
+    border: solid $primary;
+}
+
+/* Scan screen layout */
+#scan-container {
+    layout: vertical;
+}
+
+#progress-container {
+    height: 3;
+    padding: 0 1;
+}
+
+#scan-devices {
+    height: 40%;
+    border: solid $primary;
+}
+
+#scan-log {
+    height: 1fr;
+    border: solid $secondary;
+}
+
+/* Risk colors */
+.risk-critical {
+    color: red;
+    text-style: bold;
+}
+
+.risk-high {
+    color: #ff8800;
+}
+
+.risk-medium {
+    color: yellow;
+}
+
+.risk-low {
+    color: green;
+}
+
+
+/* Fix modal */
+#fix_dialog {
+    width: 70;
+    height: auto;
+    max-height: 30;
+    border: thick $success;
+    background: $surface;
+    padding: 1 2;
+}
+
+#fix_title {
+    width: 100%;
+    content-align: center middle;
+    text-style: bold;
+    color: $success;
+    margin-bottom: 1;
+}
+
+#fix_content {
+    width: 100%;
+    height: auto;
+    max-height: 20;
+    overflow-y: auto;
+    margin-bottom: 1;
+}
+
+#fix_buttons {
+    width: 100%;
+    height: auto;
+    layout: horizontal;
+    align: center middle;
+}
+
+#fix_buttons Button {
+    margin: 0 1;
+}

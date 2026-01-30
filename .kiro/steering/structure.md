@@ -1,25 +1,62 @@
 # Project Structure
 
 ## Directory Layout
-[Describe your project's folder structure and organization]
+```
+homeguard-cli/
+├── src/
+│   └── homeguard/
+│       ├── __init__.py
+│       ├── cli.py              # Typer CLI entry point
+│       ├── scanner/
+│       │   ├── __init__.py
+│       │   ├── discovery.py    # Network device discovery
+│       │   └── ports.py        # Port scanning
+│       ├── client/
+│       │   ├── __init__.py
+│       │   └── api.py          # Backend API client
+│       └── output/
+│           ├── __init__.py
+│           └── renderer.py     # Rich output formatting
+├── api/
+│   ├── main.py                 # FastAPI app
+│   ├── routes/
+│   │   └── analyze.py          # Analysis endpoints
+│   ├── services/
+│   │   ├── cve.py              # CVE lookup
+│   │   └── llm.py              # LLM proxy
+│   └── requirements.txt
+├── tests/
+│   ├── test_scanner/
+│   ├── test_client/
+│   └── test_api/
+├── .kiro/
+│   ├── steering/
+│   └── prompts/
+├── pyproject.toml
+├── README.md
+├── DEVLOG.md
+└── .env.example
+```
 
 ## File Naming Conventions
-[How files and directories should be named]
+- Python files: snake_case.py
+- Test files: test_<module>.py
+- Config files: lowercase (pyproject.toml, .env)
 
 ## Module Organization
-[How code is organized into modules, packages, or components]
+- `src/homeguard/`: CLI client package
+- `api/`: Backend FastAPI service (separate deployable)
+- `tests/`: Mirrors src/api structure
 
 ## Configuration Files
-[Location and purpose of config files]
+- `pyproject.toml`: Project metadata, dependencies
+- `.env`: Environment variables
+- `.env.example`: Template for required env vars
 
 ## Documentation Structure
-[Where and how documentation is organized]
-
-## Asset Organization
-[How images, styles, and other assets are structured]
+- `README.md`: Project overview, installation, usage
+- `DEVLOG.md`: Development timeline and decisions
 
 ## Build Artifacts
-[Where compiled/generated files are placed]
-
-## Environment-Specific Files
-[How different environments (dev, staging, prod) are handled]
+- `dist/`: Built packages and PyInstaller binaries
+- `.pytest_cache/`: Test cache
